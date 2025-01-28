@@ -19,14 +19,14 @@ contract DeployReverseRegistrar is Script {
         ReverseRegistrar revRegstrar = new ReverseRegistrar(
             Registry(ensAddress),
             deployerAddress, // deployer as owner
-            BASE_REVERSE_NODE
+            BASE_REVERSE_NODE // `8000002c.reverse`
         );
 
-        // establish the reverse registrar as the owner of the 'addr.reverse' node
+        // establish the reverse registrar as the owner of the '8000002c.reverse' node
         bytes32 reverseLabel = keccak256("reverse");
-        bytes32 baseReverseLabel = keccak256("8000002e");
-        registry.setSubnodeOwner(0x0, reverseLabel, deployerAddress);
-        registry.setSubnodeOwner(REVERSE_NODE, baseReverseLabel, address(revRegstrar));
+        bytes32 baseReverseLabel = keccak256("8000002c");
+        registry.setSubnodeOwner(0x0, reverseLabel, deployerAddress); // `deployerAddress` must own `reverse`
+        registry.setSubnodeOwner(REVERSE_NODE, baseReverseLabel, address(revRegstrar)); // `reverseRegistrar` must own `8000002c.reverse`
 
         console.log(address(revRegstrar));
 

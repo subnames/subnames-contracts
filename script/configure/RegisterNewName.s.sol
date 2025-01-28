@@ -48,7 +48,7 @@ contract RegisterNewName is Script {
     }
 
     function _packResolverData() internal view returns (bytes[] memory) {
-        (, bytes32 rootNode) = NameEncoder.dnsEncodeName("ringdao.eth");
+        (, bytes32 rootNode) = NameEncoder.dnsEncodeName("darwinia.eth");
         bytes32 label = keccak256(bytes(NAME));
         bytes32 nodehash = keccak256(abi.encodePacked(rootNode, label));
 

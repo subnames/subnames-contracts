@@ -8,8 +8,8 @@ evm_version = "london"
 
 [rpc_endpoints]
 sepolia="${SEPOLIA_RPC_URL}"
-koi="${DARWINIA_KOI_RPC_URL}"
+crab="${DARWINIA_CRAB_RPC_URL}"
 
 [etherscan]
-sepolia={url = "https://api-sepolia.etherscan.io/api", key = "${ETHERSCAN_API_KEY}"}
-koi={url = "https://koi-scan.darwinia.network/api", key = "", chain = 701 }
+sepolia={url = "https://eth-sepolia.blockscout.com/api", key = "", chain = 11155111 }
+crab={url = "https://crab-scan.darwinia.network/api", key = "", chain = 44 }

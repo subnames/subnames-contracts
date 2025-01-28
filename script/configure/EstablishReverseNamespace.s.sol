@@ -15,11 +15,10 @@ contract EstablishReverseNamespace is Script {
         Registry registry = Registry(ensAddress);
         address reverse = vm.envAddress("REVERSE_REGISTRAR_ADDR"); // Reverse registrar
 
-        // establish the base.eth namespace
         bytes32 reverseLabel = keccak256("reverse");
         bytes32 addrLabel = keccak256("addr"); // ringdao.eth is our sepolia test domain
-        registry.setSubnodeOwner(0x0, reverseLabel, deployerAddress);
-        registry.setSubnodeOwner(REVERSE_NODE, addrLabel, address(reverse)); // reverse registrar must own addr.reverse
+        registry.setSubnodeOwner(0x0, reverseLabel, deployerAddress);  // `deployerAddress` must own `reverse`
+        registry.setSubnodeOwner(REVERSE_NODE, addrLabel, address(reverse)); // `reverseRegistrar` must own `addr.reverse`
 
         vm.stopBroadcast();
     }

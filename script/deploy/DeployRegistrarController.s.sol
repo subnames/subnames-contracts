@@ -23,8 +23,8 @@ contract DeployRegistrarController is Script {
         address oracle = vm.envAddress("PRICE_ORACLE_ADDR");
         address reverse = vm.envAddress("REVERSE_REGISTRAR_ADDR"); // deployer-owned rev registrar
         address base = vm.envAddress("BASE_REGISTRAR_ADDR");
-        (, bytes32 rootNode) = NameEncoder.dnsEncodeName("ringdao.eth");
-        string memory rootName = ".ringdao.eth";
+        (, bytes32 rootNode) = NameEncoder.dnsEncodeName("darwinia.eth");
+        string memory rootName = ".darwinia.eth";
 
         RegistrarController controller = new RegistrarController(
             BaseRegistrar(base),

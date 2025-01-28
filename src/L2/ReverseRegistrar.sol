@@ -26,7 +26,7 @@ contract ReverseRegistrar is Ownable {
     ENS public immutable registry;
 
     /// @notice The reverse node this registrar manages.
-    bytes32 public immutable reverseNode;
+    bytes32 public immutable reverseNode;  // 8000002c.reverse
 
     /// @notice Permissioned controller contracts.
     mapping(address controller => bool approved) public controllers;

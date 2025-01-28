@@ -15,9 +15,9 @@ contract EstablishNamespace is Script {
         Registry registry = Registry(ensAddress);
         address baseRegistrar = vm.envAddress("BASE_REGISTRAR_ADDR");
 
-        // establish the base.eth namespace
+        // establish the darwinia.eth namespace
         bytes32 ethLabel = keccak256("eth");
-        bytes32 baseLabel = keccak256("ringdao"); // ringdao.eth is our sepolia test domain
+        bytes32 baseLabel = keccak256("darwinia");
         registry.setSubnodeOwner(0x0, ethLabel, deployerAddress);
         registry.setSubnodeOwner(ETH_NODE, baseLabel, baseRegistrar); // base registrar must own 2LD
 
