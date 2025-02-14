@@ -7,6 +7,7 @@ import {NameEncoder} from "ens-contracts/utils/NameEncoder.sol";
 
 import "src/L2/L2Resolver.sol";
 import {Registry} from "src/L2/Registry.sol";
+import {ReverseRegistrar} from "src/L2/ReverseRegistrar.sol";
 import "src/util/Constants.sol";
 
 contract DeployL2Resolver is Script {
@@ -19,8 +20,11 @@ contract DeployL2Resolver is Script {
         address ensAddress = vm.envAddress("REGISTRY_ADDR");
         address controller = vm.envAddress("REGISTRAR_CONTROLLER_ADDR"); // controller can set data on deployment
         address reverse = vm.envAddress("REVERSE_REGISTRAR_ADDR");
+        ReverseRegistrar revRegstrar = ReverseRegistrar(reverse);
 
         L2Resolver l2 = new L2Resolver(Registry(ensAddress), controller, reverse, deployerAddress);
+
+        revRegstrar.setDefaultResolver(address(l2));
 
         console.log(address(l2));
 

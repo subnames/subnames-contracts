@@ -37,7 +37,7 @@ contract RegisterNewName is Script {
             duration: duration,
             resolver: resolverAddr,
             data: _packResolverData(),
-            reverseRecord: false
+            reverseRecord: true
         });
 
         uint price = controller.registerPrice(NAME, duration);

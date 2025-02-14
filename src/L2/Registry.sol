@@ -47,7 +47,7 @@ contract Registry is ENS {
     ///
     /// @param node The node to check authorization approval for.
     modifier authorized(bytes32 node) {
-        address owner_ = _records[node].owner;
+        address owner_ = _records[node].owner; // the owner of "8000002c.reverse" is reverseRegistrar
         if (owner_ != msg.sender && !_operators[owner_][msg.sender]) revert Unauthorized();
         _;
     }
