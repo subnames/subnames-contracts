@@ -10,7 +10,7 @@ bytes32 constant REVERSE_NODE = 0xa097f6721ce401e757d1223a763fef49b8b5f90bb18567
 // @param ADDR_REVERSE_NODE The node hash of "addr.reverse"
 bytes32 constant ADDR_REVERSE_NODE = 0x91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e2;
 // @param BASE_REVERSE_NODE The ENSIP-19 compliant base-specific reverse node hash of "80002105.reverse"
-bytes32 constant BASE_REVERSE_NODE = 0x8b4150cc3554db98a2f60cb8c5a4cc48659d17a536ff9fe540be66d3307ee7a7;
+bytes32 constant BASE_REVERSE_NODE = 0x32347c1de91cbc71535aee17456bbe8987cc116a2782950e2697c6fc411ba53f;
 // @param GRACE_PERIOD the grace period for expired names
 uint256 constant GRACE_PERIOD = 90 days;
 // @param BASE_ETH_NAME The dnsName of "darwinia.eth" returned by NameEncoder.dnsEncode("darwinia.eth")
