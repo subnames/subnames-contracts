@@ -24,7 +24,7 @@ contract DeployReverseRegistrar is Script {
 
         // establish the reverse registrar as the owner of the '8000002c.reverse' node
         bytes32 reverseLabel = keccak256("reverse");
-        bytes32 baseReverseLabel = keccak256("8000002c");
+        bytes32 baseReverseLabel = keccak256("8000002e");
         registry.setSubnodeOwner(0x0, reverseLabel, deployerAddress); // `deployerAddress` must own `reverse`
         registry.setSubnodeOwner(REVERSE_NODE, baseReverseLabel, address(revRegstrar)); // `reverseRegistrar` must own `8000002c.reverse`
 

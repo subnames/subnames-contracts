@@ -7,9 +7,9 @@ fs_permissions = [{access = "read", path = "./script/premint/"}]
 evm_version = "london"
 
 [rpc_endpoints]
-sepolia="${SEPOLIA_RPC_URL}"
-crab="${DARWINIA_CRAB_RPC_URL}"
+l1="${L1_RPC_URL}"
+l2="${L2_RPC_URL}"
 
 [etherscan]
-sepolia={url = "https://eth-sepolia.blockscout.com/api", key = "", chain = 11155111 }
-crab={url = "https://crab-scan.darwinia.network/api", key = "", chain = 44 }
+l1={url = "${L1_SCAN_API_URL}", key = "${L1_SCAN_API_KEY}", chain = 1 }
+l2={url = "${L2_SCAN_API_URL}", key = "${L2_SCAN_API_KEY}", chain = 46 }

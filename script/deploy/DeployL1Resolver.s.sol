@@ -12,11 +12,11 @@ contract DeployL1Resolver is Script {
 
         /// L1 Resolver constructor data
         string memory url =
-            "https://g2d.site/{sender}/{data}.json"; //
+            "https://031625.xyz/gateway/darwinia/{sender}/{data}.json"; //
         address[] memory signers = new address[](1);
-        signers[0] = 0xD93E82b9969CC9a016Bc58f5D1D7f83918fd9C79; // DEV signer
+        signers[0] = 0xC5c1C9c3cEA2f4A68E540b18e63310310FD8af57; // DEV signer
         address owner = deployerAddresss;
-        address rootResolver = 0x8FADE66B79cC9f707aB26799354482EB93a5B7dD; // darwinia.eth root resolver on sepolia
+        address rootResolver = 0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63; // darwinia.eth root resolver on sepolia
 
         L1Resolver l1 = new L1Resolver(url, signers, owner, rootResolver);
         console.log(address(l1));
